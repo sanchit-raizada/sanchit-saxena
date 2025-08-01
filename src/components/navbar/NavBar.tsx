@@ -103,7 +103,7 @@ const NavBar = () => {
               </a>
             </li>
           ))}
-          <li>
+          <li className="mt-8 uppercase">
              <FontAwesomeIcon
               icon={'file'}
               className="group-hover:text-black dark:group-hover:text-white transition-colors duration-300"
