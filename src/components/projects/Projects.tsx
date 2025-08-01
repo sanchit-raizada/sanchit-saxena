@@ -136,7 +136,7 @@ export default function Projects() {
   const [hoveredProject, setHoveredProject] = useState<number | null>(null);
 
   return (
-    <div id="#projects" className="min-h-screen bg-white dark:bg-black transition-colors duration-300 p-8">
+    <div id="projects" className="min-h-screen bg-white dark:bg-black transition-colors duration-300 p-8">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <motion.div

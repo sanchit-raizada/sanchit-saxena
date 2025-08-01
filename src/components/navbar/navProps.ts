@@ -1,6 +1,7 @@
 import { ICON_PRESETS } from "../../fontAwesome"
 
 
+
 export const LinkData= [
   {
     link:"home",
@@ -30,6 +31,6 @@ export const LinkData= [
   {
     link:"resume",
     icon:ICON_PRESETS.nav.resume,
-    href:""
+    href:"../../assets/sanchit_resume_new.pdf"
   }
 ]

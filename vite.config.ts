@@ -4,7 +4,7 @@ import tailwindcss from "@tailwindcss/vite";
 import { resolve } from "node:path";
 // https://vite.dev/config/
 export default defineConfig({
-  base:'/sanchit-raizada',
+  base:'/sanchit-saxena',
   plugins: [react(), tailwindcss()],
   resolve: {
     alias: {
