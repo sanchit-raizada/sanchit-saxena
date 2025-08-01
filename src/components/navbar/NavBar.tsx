@@ -21,7 +21,7 @@ const NavBar = () => {
 
         {/* Desktop Nav */}
         <ul className="hidden md:flex md:space-x-4 text-gray-600 dark:text-gray-300 items-center">
-          {LinkData.map(({ icon, link ,href}, index) => (
+          {LinkData.map(({ icon, link, href }, index) => (
             <li
               key={index}
               className="group flex items-center gap-1 capitalize"
@@ -31,6 +31,8 @@ const NavBar = () => {
                 className="group-hover:text-black dark:group-hover:text-white transition-colors duration-300"
               />
               <a
+                target="_blank"
+                rel={link === "resume" ? "noopener noreferrer" : ""}
                 href={href}
                 className="group-hover:text-black dark:group-hover:text-white transition-colors duration-300"
               >
@@ -60,7 +62,7 @@ const NavBar = () => {
           <FontAwesomeIcon icon={["fas", "bars"]} className="text-lg" />
         </button>
       </header>
-      <StickyScroll/>
+      <StickyScroll />
 
       {/* Mobile Slide Menu */}
       <section
@@ -74,10 +76,12 @@ const NavBar = () => {
           </button>
         </div>
         <ul className="flex flex-col items-center  text-xl font-medium">
-          {LinkData.map(({ link, icon,href }, index) => (
+          {LinkData.map(({ link, icon, href }, index) => (
             <li key={index} className="mt-8 uppercase">
               <FontAwesomeIcon icon={icon} className="text-xl  mr-3" />
               <a
+                target="_blank"
+                rel={link === "resume" ? "noopener noreferrer" : ""}
                 href={href}
                 onClick={() => setMobileMenu(false)}
                 className="text-xl font-light"
