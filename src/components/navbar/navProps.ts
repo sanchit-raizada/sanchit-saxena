@@ -31,8 +31,7 @@ export const LinkData= [
   {
     link:"resume",
     icon:ICON_PRESETS.nav.resume,
-    href:"/assets/sanchit_resume_new.pdf"
+    href:"https://sanchit-raizada.github.io/sanchit-saxena/sanchit_resume_new.pdf"
+
   }
 ]
-
-// <a href=""  rel="noopener noreferrer">

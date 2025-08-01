@@ -54,6 +54,10 @@ const NavBar = () => {
           </li>
         </ul>
 
+
+        
+
+
         {/* Mobile Menu Toggle Button */}
         <button
           onClick={() => setMobileMenu(true)}
