@@ -31,7 +31,7 @@ const NavBar = () => {
                 className="group-hover:text-black dark:group-hover:text-white transition-colors duration-300"
               />
               <a
-                target="_blank"
+                target={link==="resume"? "_blank":""}
                 rel={link === "resume" ? "noopener noreferrer" : ""}
                 href={href}
                 className="group-hover:text-black dark:group-hover:text-white transition-colors duration-300"
@@ -84,7 +84,7 @@ const NavBar = () => {
             <li key={index} className="mt-8 uppercase">
               <FontAwesomeIcon icon={icon} className="text-xl  mr-3" />
               <a
-                target="_blank"
+                target={link==="resume"? "_blank":""}
                 rel={link === "resume" ? "noopener noreferrer" : ""}
                 href={href}
                 onClick={() => setMobileMenu(false)}
