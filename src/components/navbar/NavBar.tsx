@@ -5,30 +5,16 @@ import { useState } from "react";
 import Portfolio from "./Portfolio";
 import StickyScroll from "./StickyScroll";
 
+
 const NavBar = () => {
   const { isDarkMode, setDarkMode } = useTheme();
   const [MobileMenu, setMobileMenu] = useState(false);
 
-  const renderLink = (link: string, icon: any, href: string, isMobile = false) => (
-    <li key={link} className={`capitalize ${isMobile ? "mt-8 uppercase text-xl font-light" : "group flex items-center gap-1"}`}>
-      <FontAwesomeIcon icon={icon} className={`text-xl ${isMobile ? "mr-3" : "group-hover:text-black dark:group-hover:text-white transition-colors duration-300"}`} />
-      <a
-        href={href}
-        target={link === "resume" ? "_blank" : undefined}
-        rel={link === "resume" ? "noopener noreferrer" : undefined}
-        onClick={() => setMobileMenu(false)}
-        className={`${isMobile ? "" : "group-hover:text-black dark:group-hover:text-white transition-colors duration-300"}`}
-      >
-        {link}
-      </a>
-    </li>
-  );
-
   return (
     <>
-      <header className="w-full flex px-4 py-4 items-center justify-between fixed top-0 shadow-md bg-white dark:bg-black z-50">
+      <header className="w-full flex px-4 py-4 items-center justify-between fixed top-0 shadow-md  bg-white dark:bg-black z-50">
         <section className="w-[180px] relative">
-          <h1 className="text-4xl font-medium relative text-center text-black dark:text-white transition-colors duration-500">
+          <h1 className="text-4xl font-medium relative text-center  text-black dark:text-white transition-colors duration-500">
             Portfolio
           </h1>
           <Portfolio />
@@ -36,7 +22,39 @@ const NavBar = () => {
 
         {/* Desktop Nav */}
         <ul className="hidden md:flex md:space-x-4 text-gray-600 dark:text-gray-300 items-center">
-          {LinkData.map(({ icon, link, href }) => renderLink(link, icon, href))}
+          {LinkData.map(({ icon, link, href }, index) => (
+            <li
+              key={index}
+              className="group flex items-center gap-1 capitalize"
+            >
+              <FontAwesomeIcon
+                icon={icon}
+                className="group-hover:text-black dark:group-hover:text-white transition-colors duration-300"
+              />
+              <a
+                target={link === "resume" ? "_blank" : ""}
+                rel={link === "resume" ? "noopener noreferrer" : ""}
+                href={href}
+                className="group-hover:text-black dark:group-hover:text-white transition-colors duration-300"
+              >
+                {link}
+              </a>
+            </li>
+          ))}
+          <li>
+            <FontAwesomeIcon
+              icon={'file'}
+              className="group-hover:text-black dark:group-hover:text-white transition-colors duration-300"
+            />
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://sanchit-raizada.github.io/sanchit-saxena/sanchit_resume_new.pdf"
+              className="group-hover:text-black dark:group-hover:text-white transition-colors duration-300"
+            >
+              resume
+            </a>
+          </li>
           {/* Dark Mode Toggle */}
           <li>
             <button
@@ -59,7 +77,6 @@ const NavBar = () => {
           <FontAwesomeIcon icon={["fas", "bars"]} className="text-lg" />
         </button>
       </header>
-
       <StickyScroll />
 
       {/* Mobile Slide Menu */}
@@ -73,8 +90,34 @@ const NavBar = () => {
             <FontAwesomeIcon icon={["fas", "times"]} className="text-2xl" />
           </button>
         </div>
-        <ul className="flex flex-col items-center text-xl font-medium">
-          {LinkData.map(({ link, icon, href }) => renderLink(link, icon, href, true))}
+        <ul className="flex flex-col items-center  text-xl font-medium">
+          {LinkData.map(({ link, icon, href }, index) => (
+            <li key={index} className="mt-8 uppercase">
+              <FontAwesomeIcon icon={icon} className="text-xl  mr-3" />
+              <a
+                href={href}
+                onClick={() => setMobileMenu(false)}
+                className="text-xl font-light"
+              >
+                {link}
+              </a>
+            </li>
+          ))}
+          <li>
+             <FontAwesomeIcon
+              icon={'file'}
+              className="group-hover:text-black dark:group-hover:text-white transition-colors duration-300"
+            />
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href={`https://sanchit-raizada.github.io/sanchit-saxena/sanchit_resume_new.pdf`}
+              onClick={() => setMobileMenu(false)}
+              className="text-xl font-light"
+            >
+              Resume
+            </a>
+          </li>
         </ul>
       </section>
     </>

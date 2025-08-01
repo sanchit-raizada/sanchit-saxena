@@ -28,10 +28,4 @@ export const LinkData= [
     icon:ICON_PRESETS.nav.projects,
     href:"#projects"
   },
-  {
-    link:"resume",
-    icon:ICON_PRESETS.nav.resume,
-    href:"https://sanchit-raizada.github.io/sanchit-saxena/sanchit_resume_new.pdf"
-
-  }
 ]
